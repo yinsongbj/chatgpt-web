@@ -7,7 +7,7 @@ export function fetchChatAPI<T = any>(
   signal?: GenericAbortSignal,
 ) {
   return post<T>({
-    url: '/chat',
+    url: 'https://chatgpt.funscall.com/chat',
     data: { prompt, options },
     signal,
   })
