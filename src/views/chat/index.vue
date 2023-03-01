@@ -71,7 +71,7 @@ async function onConversation() {
     +uuid,
     {
       dateTime: new Date().toLocaleString(),
-      text: 'Aha, Thinking...',
+      text: '哦，正在思考 ...',
       loading: true,
       inversion: false,
       error: false,
@@ -146,7 +146,7 @@ async function onRegenerate(index: number) {
     index,
     {
       dateTime: new Date().toLocaleString(),
-      text: 'Aha, Let me think again...',
+      text: '啊，让我再想想 ...',
       inversion: false,
       error: false,
       loading: true,
@@ -201,13 +201,13 @@ function handleDelete(index: number) {
     return
 
   dialog.warning({
-    title: 'Delete Message',
-    content: 'Are you sure to delete this message?',
-    positiveText: 'Yes',
-    negativeText: 'No',
+    title: '删除信息',
+    content: '确认删除这条消息吗?',
+    positiveText: '确定',
+    negativeText: '取消',
     onPositiveClick: () => {
       chatStore.deleteChatByUuid(+uuid, index)
-      ms.success('Message deleted successfully.')
+      ms.success('消息被成功删除.')
     },
   })
 }
@@ -217,10 +217,10 @@ function handleClear() {
     return
 
   dialog.warning({
-    title: 'Clear Chat',
-    content: 'Are you sure to clear this chat?',
-    positiveText: 'Yes',
-    negativeText: 'No',
+    title: '清空对话',
+    content: '您确认要清空对话吗?',
+    positiveText: '确定',
+    negativeText: '取消',
     onPositiveClick: () => {
       chatStore.clearChatByUuid(+uuid)
     },
@@ -276,7 +276,7 @@ onUnmounted(() => {
         <template v-if="!dataSources.length">
           <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
             <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
-            <span>Aha~</span>
+            <span>恭候您多时了~</span>
           </div>
         </template>
         <template v-else>
@@ -297,7 +297,7 @@ onUnmounted(() => {
                 <template #icon>
                   <SvgIcon icon="ri:stop-circle-line" />
                 </template>
-                Stop Responding
+                取消回复消息
               </NButton>
             </div>
           </div>
@@ -315,7 +315,7 @@ onUnmounted(() => {
           v-model:value="prompt"
           type="textarea"
           :autosize="{ minRows: 1, maxRows: 2 }"
-          placeholder="Ask me anything..."
+          placeholder="请开启您的提问 ..."
           @keypress="handleEnter"
         />
         <NButton type="primary" :disabled="buttonDisabled" @click="handleSubmit">

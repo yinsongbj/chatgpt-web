@@ -61,14 +61,14 @@ watch(
         </h2>
         <hr>
         <p>
-          此项目开源于
-          <a class="text-blue-600" href="https://github.com/Chanzhaoyu/chatgpt-web" target="_blank">Github</a>
-          如果你觉得此项目对你有帮助，请帮我点个 Star，谢谢！
+          本功能由
+          <a class="text-blue-600" href="https://www.jindingwen.com" target="_blank">金鼎文科技</a>
+          提供，如果您觉得还可以，请帮忙分享给您的朋友。
         </p>
         <hr>
-        <p>API方式：{{ config?.apiModel ?? '-' }}</p>
+        <!-- <p>API方式：{{ config?.apiModel ?? '-' }}</p>
         <p>反向代理：{{ config?.reverseProxy ?? '-' }}</p>
-        <p>超时时间：{{ config?.timeoutMs ?? '-' }}</p>
+        <p>超时时间：{{ config?.timeoutMs ?? '-' }}</p> -->
       </div>
     </NCard>
   </NModal>
